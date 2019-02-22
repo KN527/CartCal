@@ -8,8 +8,10 @@
 	<ul id="app">
 		<li v-for="(item, index) in goods">
 			商品名称：<input type="text" v-model="item.goodName">
+			<br>
 			商品价格：<input type="number" v-model="item.goodPrice">
 			商品数量：<button v-on:click="handleMinus(index)">-</button><input type="text" v-model="item.goodNumber"><button v-on:click="handleIncrement(index)">+</button>
+			<br>
 			共计：<span>{{ item.goodTotal = item.goodPrice * item.goodNumber }}</span>
 			<button v-on:click="deleteLine(index)">×</button>
 		</li>
