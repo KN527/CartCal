@@ -78,7 +78,7 @@
 				for (item of goods) {
 					sum = sum + item.goodTotal
 				}
-				return sum
+				return (Math.ceil(sum*100))/100
 			}
 		}
 	})
