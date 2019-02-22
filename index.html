@@ -12,7 +12,7 @@
 			商品价格：<input type="number" v-model="item.goodPrice">
 			商品数量：<button v-on:click="handleMinus(index)">-</button><input type="text" v-model="item.goodNumber"><button v-on:click="handleIncrement(index)">+</button>
 			<br>
-			共计：<span>{{ item.goodTotal = item.goodPrice * item.goodNumber }}</span>
+			共计：<span>{{ Math.round(item.goodPrice*item.goodNumber*100)/100 }}</span>
 			<button v-on:click="deleteLine(index)">删除本项</button>
 		</li>
 		<input type="text" v-model="newGood"><button v-on:click="handleAdd">加一行</button>
@@ -78,7 +78,7 @@
 				for (item of goods) {
 					sum = sum + item.goodTotal
 				}
-				return (Math.ceil(sum*100))/100
+				return sum
 			}
 		}
 	})
