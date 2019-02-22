@@ -13,7 +13,7 @@
 			商品数量：<button v-on:click="handleMinus(index)">-</button><input type="text" v-model="item.goodNumber"><button v-on:click="handleIncrement(index)">+</button>
 			<br>
 			共计：<span>{{ item.goodTotal = item.goodPrice * item.goodNumber }}</span>
-			<button v-on:click="deleteLine(index)">×</button>
+			<button v-on:click="deleteLine(index)">删除本项</button>
 		</li>
 		<input type="text" v-model="newGood"><button v-on:click="handleAdd">加一行</button>
 		<br>
